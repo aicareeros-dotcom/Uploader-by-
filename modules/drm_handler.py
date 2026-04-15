@@ -53,7 +53,7 @@ async def drm_handler(bot: Client, m: Message):
     CR = globals.CR
     cwtoken = globals.cwtoken
     cptoken = globals.cptoken
-    pwtoken = globals.pwtoken
+    pw_token = globals.pwtoken
     vidwatermark = globals.vidwatermark
     raw_text2 = globals.raw_text2
     quality = globals.quality
