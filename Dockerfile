@@ -1,4 +1,4 @@
-# Use Python 3.12 (non-alpine for better compatibility)
+# Use Python 3.12
 FROM python:3.12-slim
 
 # Set working directory
@@ -32,14 +32,15 @@ RUN wget -q https://github.com/axiomatic-systems/Bento4/archive/v1.6.0-639.zip \
 # Copy project files
 COPY . .
 
-# Install Python dependencies (IMPORTANT FIX)
+# Upgrade pip + fix pkg_resources issue
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir setuptools wheel \
-    && pip install --no-cache-dir -r sainibots.txt \
-    && pip install --no-cache-dir gunicorn yt-dlp
+    && pip install --no-cache-dir --upgrade setuptools wheel
+
+# Install requirements
+RUN pip install --no-cache-dir -r sainibots.txt
 
 # Expose port
 EXPOSE 10000
 
-# Start both Web + Bot
-CMD sh -c "gunicorn app:app --bind 0.0.0.0:$PORT & python3 modules/main.py"
+# Start BOTH bot + web correctly
+CMD ["sh", "-c", "python3 modules/main.py & gunicorn app:app --bind 0.0.0.0:${PORT:-10000}"]
