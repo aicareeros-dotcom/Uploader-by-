@@ -5,15 +5,18 @@ idna==3.4
 mutagen==1.46.0
 pyaes==1.6.1
 pycryptodome==3.18.0
+
+Telegram (use only Pyrogram)
+
 pyrogram
 pyrofork
 pyromod==1.5
 PySocks==1.7.1
+TgCrypto==1.2.5
+
 python-dotenv==1.0.0
-python-telegram-bot==20.3
 requests==2.31.0
 soupsieve==2.4.1
-TgCrypto==1.2.5
 urllib3==2.0.3
 websockets==11.0.3
 yt-dlp
@@ -24,11 +27,13 @@ pillow
 m3u8
 umongo==3.1.0
 speedtest-cli
+
 Flask==2.2.5
 gunicorn==21.2.0
 Jinja2==3.1.2
 werkzeug==2.2.3
 itsdangerous==2.1.2
+
 youtube-dl
 cloudscraper
 cryptography
@@ -40,10 +45,16 @@ bs4
 beautifulsoup4
 reportlab
 pytube
+
 google-auth
 google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
+
 ffmpeg-python
 setuptools
 wheel
+
+✅ FIXED ERROR
+
+pytz==2024.1
